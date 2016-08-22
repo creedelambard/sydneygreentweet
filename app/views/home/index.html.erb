@@ -6,12 +6,30 @@
   </div>
   <div class="row">
     <div class="col-lg-4">
-      Sign in goes here
+      <br>Already have an account?</br>
+      <p />
+      <%= link_to "Log in here", new_user_session_path %>
     </div>
     <div class="col-lg-4">
-      Sign up goes here
+      <br>New to Syndey?</br>
+      <p />
+      <%= link_to "Sign up here", new_user_registration_path %>
     </div>
     <div class="col-lg-4">
-      Link to "about" page
+      <br>A little about us </br>
+      <p />
+      <%= link_to "About Sydney", home_about_path %>
     </div>
   </div>
+
+<!-- 
+Important information;
+  
+sign up  			users/sign_up			new_user_registration_path
+sign in 			users/sign_in			new_user_session
+Confirmation link	users/confirmation/new	new_user_confirmation
+Sign in w/Twitter`	users/auth/twitter		user_twitter_omniauth_authorize
+  
+  
+  
+-->
