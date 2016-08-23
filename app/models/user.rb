@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:twitter]
          
@@ -15,11 +15,15 @@ class User < ActiveRecord::Base
          return registered_user
       else
          user = User.create(
-           username: auth.info.name,
-           provider: auth.provider,
-           uid:      auth.uid,
-           email:    auth.uid+"@twitter.com",
-           password: Devise.friendly_token[0,20]
+           username:            auth.info.name,
+           provider:            auth.provider,
+           uid:                 auth.uid,
+           twitter_user_token:  auth.token,
+           twitter_user_secret: auth.secret,
+           is_active:           true,
+           role:                'user',
+           email:               auth.uid+"@twitter.com",
+           password:            Devise.friendly_token[0,20]
          )
       end
     end
