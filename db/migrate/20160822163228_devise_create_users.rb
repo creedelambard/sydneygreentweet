@@ -2,10 +2,19 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       ## Database authenticatable
+      t.string :username
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      
+      t.string :twitter_user_token
+      t.string :twitter_user_secret
 
-      t.boolean :is_admin
+      t.boolean :is_active
+      t.string  :role,              null: false, default: "user"
+      
+      ## for omniauth
+      t.string  :provider
+      t.string  :uid
       
       ## Recoverable
       t.string   :reset_password_token
