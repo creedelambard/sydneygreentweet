@@ -260,6 +260,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   mysql2
+  omniauth
   omniauth-twitter
   rails (= 4.2.7)
   sass-rails (~> 5.0)
@@ -277,4 +278,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.3
+   1.12.5
