@@ -15,7 +15,7 @@
  *= require_self
  */
 
-@import "variables";
+@import "global";
 
 
 .headline {
@@ -31,3 +31,21 @@
 .logo-font {
   font-family: 'IM Fell English', serif;
 }
+
+.centered {
+  text-align: center;
+}
+
+.green40 {
+  background-color: $green40;
+}
+
+.green45 {
+  background-color: $green45;
+}
+
+.homebox {
+  padding: 4px;
+  margin: 4px;
+}
+
