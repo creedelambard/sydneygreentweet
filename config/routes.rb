@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :tweets
+  resources :messages
+  get 'feed/index'
+
+  get 'search/index'
+
+  get 'timeline/index'
+
   devise_for :users, :controllers => { 
     omniauth_callbacks: "users/omniauth_callbacks", 
     registrations: 'registrations'

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  hashtags: MyString
+  targets: MyString
+  notes: MyString
+  deadline: 2016-08-25 14:23:31
+
+two:
+  description: MyString
+  hashtags: MyString
+  targets: MyString
+  notes: MyString
+  deadline: 2016-08-25 14:23:31

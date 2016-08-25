@@ -11,14 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822163228) do
+ActiveRecord::Schema.define(version: 20160825212414) do
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "description"
+    t.string   "hashtags"
+    t.string   "targets"
+    t.string   "notes"
+    t.datetime "deadline"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "tweets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "message_id"
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tweets", ["message_id"], name: "index_tweets_on_message_id"
+  add_index "tweets", ["user_id"], name: "index_tweets_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email",                  default: "",     null: false
     t.string   "encrypted_password",     default: "",     null: false
-    t.string   "twitter_user_token"
-    t.string   "twitter_user_secret"
+    t.string   "user_token"
+    t.string   "user_secret"
     t.boolean  "is_active"
     t.string   "role",                   default: "user", null: false
     t.string   "provider"

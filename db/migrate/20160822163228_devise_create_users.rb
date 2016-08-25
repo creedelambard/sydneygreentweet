@@ -6,8 +6,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       
-      t.string :twitter_user_token
-      t.string :twitter_user_secret
+      t.string :user_token
+      t.string :user_secret
 
       t.boolean :is_active
       t.string  :role,              null: false, default: "user"

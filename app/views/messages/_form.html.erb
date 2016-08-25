@@ -1,0 +1,15 @@
+<%= simple_form_for(@message) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :description %>
+    <%= f.input :hashtags %>
+    <%= f.input :targets %>
+    <%= f.input :notes %>
+    <%= f.input :deadline %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
