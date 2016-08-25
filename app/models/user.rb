@@ -15,11 +15,11 @@ class User < ActiveRecord::Base
          return registered_user
       else
          user = User.create(
-           username:            auth.info.name,
+           username:            auth.info.nickname,
            provider:            auth.provider,
            uid:                 auth.uid,
-           twitter_user_token:  auth.token,
-           twitter_user_secret: auth.secret,
+           twitter_user_token:  auth.credentials.token,
+           twitter_user_secret: auth.credentials.secret,
            is_active:           true,
            role:                'user',
            email:               auth.uid+"@twitter.com",
